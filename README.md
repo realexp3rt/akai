@@ -3,7 +3,7 @@
    Akai is a tool to Automate [anonsurf] and [macchanger] to redirect all the traffic in your device to TOR and spoof your mac address within a one click. And it also can change your IP in a certain amount for an example every 1 or 10s.
 
 
-```python
+```bash
 
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmmmNNddhhhdddddmmmmNmNmdddmmmNNddmNNNNmNNNNNNNNNNNNNNN
 NNmNNNNNNNNNNNNNNNNNNNNNNNNNNNNmNNNNNmNNNNmNNNdmmdhsossyyhysssyymmddddhdhyhdmmhhmNNNmNNNNNNNNNNNNNNN
