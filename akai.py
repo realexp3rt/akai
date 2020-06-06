@@ -4,6 +4,7 @@ import json
 from requests import get,session
 from sys import exit
 from time import sleep
+from macvendors import *
 
 import uuid
 
@@ -25,6 +26,28 @@ def show_options():
     print(COLOR.BRIGHT_BLUE + '[7] ' + COLOR.WHITE + 'stop')
     print(COLOR.BRIGHT_BLUE + '[8] ' + COLOR.WHITE + 'clear')
     print(COLOR.BRIGHT_BLUE + '[9] ' + COLOR.WHITE + 'exit/quit\n')
+
+def show_mac_options():
+    print(COLOR.BRIGHT_BLUE + '[1] ' + COLOR.WHITE + ' [ Full Random MAC Address ]')
+    print(COLOR.BRIGHT_BLUE + '[2] ' + COLOR.WHITE + ' [ Samsung ]')
+    print(COLOR.BRIGHT_BLUE + '[3] ' + COLOR.WHITE + ' [ Apple ]')
+    print(COLOR.BRIGHT_BLUE + '[4] ' + COLOR.WHITE + ' [ HUAWEI ]')
+    print(COLOR.BRIGHT_BLUE + '[5] ' + COLOR.WHITE + ' [ Nokia ]')
+    print(COLOR.BRIGHT_BLUE + '[6] ' + COLOR.WHITE + ' [ BlackBerry ]')
+    print(COLOR.BRIGHT_BLUE + '[7] ' + COLOR.WHITE + ' [ Motorola ]')
+    print(COLOR.BRIGHT_BLUE + '[8] ' + COLOR.WHITE + ' [ HTC ]')
+    print(COLOR.BRIGHT_BLUE + '[9] ' + COLOR.WHITE + ' [ Google ]')
+    print(COLOR.BRIGHT_BLUE + '[10] ' + COLOR.WHITE + '[ ASUS ]')
+    print(COLOR.BRIGHT_BLUE + '[11] ' + COLOR.WHITE + '[ FUJITSU ]')
+    print(COLOR.BRIGHT_BLUE + '[12] ' + COLOR.WHITE + '[ TOSHIBA ]')
+    print(COLOR.BRIGHT_BLUE + '[13] ' + COLOR.WHITE + '[ Acer ]')
+    print(COLOR.BRIGHT_BLUE + '[14] ' + COLOR.WHITE + '[ Dell ]')
+    print(COLOR.BRIGHT_BLUE + '[15] ' + COLOR.WHITE + '[ HP ]\n')
+    print(COLOR.BRIGHT_BLUE + '[S] ' + COLOR.WHITE + 'Show MAC Adress')
+    print(COLOR.BRIGHT_BLUE + '[B] ' + COLOR.WHITE + 'Back to the main options')
+    print(COLOR.BRIGHT_BLUE + '[X] ' + COLOR.WHITE + 'exit/quit\n')
+
+
 
 def banner():
     print(COLOR.RED + """
@@ -162,6 +185,88 @@ def goodbye():
     print(COLOR.VIOLET + '\n[-] Thanks For Using Akai!\n')
     exit()
 
+def MAC():
+
+    try:
+
+        while True:
+
+            choice = input(COLOR.GREEN + STYLE.ITALIC + '[akai]~[mac]' + COLOR.WHITE +  ' > ' + COLOR.WHITE)
+
+            if(choice == '1'):
+                print('\n')
+                change_macaddress()
+                get_mac()
+            elif(choice == '2'):
+                print('\n')
+                mac_samsung()
+                get_mac()
+            elif(choice == '3'):
+                print('\n')
+                mac_apple()
+                get_mac()
+            elif(choice == '4'):
+                print('\n')
+                mac_huawei()
+                get_mac()
+            elif(choice == '5'):
+                print('\n')
+                mac_nokia()
+                get_mac()
+            elif(choice == '6'):
+                print('\n')
+                mac_blackberry()
+                get_mac()
+            elif(choice == '7'):
+                print('\n')
+                mac_motorola()
+                get_mac()
+            elif(choice == '8'):
+                print('\n')
+                mac_htc()
+                get_mac()
+            elif(choice == '9'):
+                print('\n')
+                mac_google()
+                get_mac()
+            elif(choice == '10'):
+                print('\n')
+                mac_asus()
+                get_mac()
+            elif(choice == '11'):
+                print('\n')
+                mac_FUJITSU()
+                get_mac()
+            elif(choice == '12'):
+                print('\n')
+                mac_toshiba()
+                get_mac()
+            elif(choice == '13'):
+                print('\n')
+                mac_acer()
+                get_mac()
+            elif(choice == '14'):
+                print('\n')
+                mac_dell()
+                get_mac()
+            elif(choice == '15'):
+
+                print('\n')
+                mac_hp()
+                get_mac()
+            elif(choice == 's' or choice == 'S' or choice == 'mac' or choice == 'show mac'):
+                print('')
+                get_mac()
+            elif(choice == 'b' or choice == 'B' or choice == 'back'):
+                clear()
+                Engine()
+            elif(choice == 'X' or choice == 'x' or choice == 'exit' or choice == 'quit'):
+                quit()
+    except KeyboardInterrupt:
+        print('\n')
+        goodbye()
+
+
 def clear():
     os.system('clear')
     banner()
@@ -191,12 +296,14 @@ def Engine():
                 show_ip()
                 print('\n')
             elif(choice == '4' or choice.lower() == 'change my mac address'):
-                change_macaddress()
-                get_mac()
-
+                os.system('clear')
+                banner()
+                show_mac_options()
+                MAC()
             elif(choice == '5' or choice.lower() == 'do it all'):
                 start_anonsurf()
                 os.system('anonsurf change ip >/dev/null 2>&1')
+                show_ip()
                 change_macaddress()
                 get_mac()
             elif(choice == '6' or choice.lower() == 'show ip'):
