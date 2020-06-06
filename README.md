@@ -49,6 +49,13 @@ Then install the other requirements.
 chmod +x *
 bash install.sh
 ```
+
+## Features
+- Redirect all the traffic to TOR network.
+- The Ability to change your IP address every [] seconds.
+- Customize your MAC Address to a Certain vendor like [Samsung,Apple,etc..].
+- Show your public ip.
+
 ## Usage
 
 ```bash
@@ -60,3 +67,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Screenshots
+![alt text](https://i.ibb.co/nrCkttX/Screenshot-1.jpg)
+![alt text](https://i.ibb.co/s5pzgqh/Screenshot-2.jpg)
